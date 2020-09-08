@@ -3,26 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutterfoodapp/core/constants/enums/app_theme_enum.dart';
 import 'package:flutterfoodapp/core/init/lang/language_service.dart';
 import 'package:flutterfoodapp/core/init/notifier/theme_notifer.dart';
-import 'package:flutterfoodapp/view/viewmodel/home_view_model.dart';
 import 'package:provider/provider.dart';
+
+import 'home_view_model.dart';
 import '../../core/extensions/extensions_provider.dart';
 
-class HomeView extends StatefulWidget {
-  HomeView({Key key}) : super(key: key);
-
-  @override
-  _HomeViewState createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
+class HomePageView extends HomePageViewModel {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-
-  HomeViewModel viewModel = HomeViewModel();
 
   @override
   void initState() {
     super.initState();
-    viewModel.init();
+    //final response = await coreDio.fetch<List<TestModel>, TestModel>("x", type: HttpTypes.GET, parseModel: TestModel());
   }
 
   @override
@@ -64,7 +56,10 @@ class _HomeViewState extends State<HomeView> {
                     ),
                   )
                   .toList(),
-            )
+            ),
+            isLoading
+                ? CircularProgressIndicator()
+                : Text(postModels.length.toString())
           ],
         ),
       )),

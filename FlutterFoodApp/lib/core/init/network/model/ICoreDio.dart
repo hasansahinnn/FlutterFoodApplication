@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfoodapp/core/constants/enums/http_enums.dart';
 
-import '../../base/model/base_model.dart';
-import 'model/IResponseModel.dart';
+import '../../../base/model/base_model.dart';
+import 'IResponseModel.dart';
 
 abstract class ICoreDio {
-  Future<IResponseModel<R>> fetch<R, T extends BaseModel>(String path,
+  Future<IResponseModel<R>> fetch<R, T extends IBaseModel>(String path,
       {@required HttpTypes type,
       @required T parseModel,
       dynamic data,

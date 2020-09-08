@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfoodapp/core/init/network/ICoreDio.dart';
-import 'package:flutterfoodapp/core/init/network/network_manager.dart';
+import 'package:flutterfoodapp/core/init/network/model/ICoreDio.dart';
 
-abstract class BaseViewModel {
+class BaseViewModel {
   BuildContext context;
 
-  ICoreDio coreDio = NetworkManager.instance.coreDio;
-  void setContext(BuildContext context);
-  void init();
+  ICoreDio coreDio;
+  void setContext(BuildContext context) {
+    this.context = context;
+  }
+  // void init();
 }

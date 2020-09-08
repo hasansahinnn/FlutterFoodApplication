@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterfoodapp/core/constants/enums/http_enums.dart';
 
 import '../../base/model/base_model.dart';
-import 'ICoreDio.dart';
+import 'model/ICoreDio.dart';
 import 'model/IResponseModel.dart';
 import '../../extensions/http_type_extension.dart';
 part "./network_core/core_operations.dart";
@@ -20,7 +20,7 @@ class CoreDio with DioMixin implements Dio, ICoreDio {
     this.httpClientAdapter = DefaultHttpClientAdapter();
   }
 
-  Future<IResponseModel<R>> fetch<R, T extends BaseModel>(String path,
+  Future<IResponseModel<R>> fetch<R, T extends IBaseModel>(String path,
       {@required HttpTypes type,
       @required T parseModel,
       dynamic data,
@@ -31,7 +31,7 @@ class CoreDio with DioMixin implements Dio, ICoreDio {
     switch (response.statusCode) {
       case HttpStatus.ok:
       case HttpStatus.accepted:
-        final model = _responseParser<R>(parseModel, _responseParser);
+        R model = _responseParser<R, T>(parseModel, response.data);
         return ResponseModel<R>(data: model);
       default:
         return ResponseModel(error: BaseError("error"));
