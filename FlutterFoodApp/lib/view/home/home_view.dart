@@ -21,18 +21,18 @@ class HomePageView extends HomePageViewModel {
     themeProvider = Provider.of<ThemeNotifier>(context);
     locales = EasyLocalization.of(context);
     return Scaffold(
-        appBar: mainAppBar(),
+        appBar: mainAppBar,
         body: SafeArea(
           child: Container(child: Text("1")),
         ));
   }
 
-  AppBar mainAppBar() {
+  AppBar get mainAppBar {
     return AppBar(
       title: Text(AppConstansts.APP_NAME.locale),
       leading: Icon(Icons.arrow_left),
       actions: [
-        pageRefreshButton(),
+        pageRefreshButton,
         GeneralSettingsButton(
           themeProvider: themeProvider,
           locales: locales,
@@ -41,6 +41,6 @@ class HomePageView extends HomePageViewModel {
     );
   }
 
-  IconButton pageRefreshButton() =>
+  IconButton get pageRefreshButton =>
       IconButton(onPressed: () {}, icon: Icon(Icons.refresh));
 }

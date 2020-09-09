@@ -4,11 +4,11 @@ import 'package:flutterfoodapp/core/init/lang/language_service.dart';
 
 import 'appSettings.dart';
 
-class generalSettingsButton extends StatelessWidget {
+class GeneralSettingsButton extends StatelessWidget {
   final themeProvider;
   final locales;
 
-  const generalSettingsButton({Key key, this.themeProvider, this.locales})
+  const GeneralSettingsButton({Key key, this.themeProvider, this.locales})
       : super(key: key);
 
   @override
