@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterfoodapp/view/home/home.dart';
 import 'package:provider/provider.dart';
 
 import 'core/constants/app/app_constants.dart';
@@ -9,6 +8,7 @@ import 'core/init/lang/language_service.dart';
 import 'core/init/navigation/navigation_service.dart';
 import 'core/init/notifier/provider_list.dart';
 import 'core/init/notifier/theme_notifer.dart';
+import 'foodapp/view/home/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -20,18 +20,16 @@ class GeneralSettingsButton extends StatelessWidget {
 
   Widget genaralSettingsPopup() {
     return PopupMenuButton<GeneralSettings>(
-      icon: Icon(Icons.short_text),
-      onSelected: _changeAppSettings,
-      itemBuilder: (BuildContext context) {
-        return choices.map((GeneralSettings choice) {
-          return PopupMenuItem<GeneralSettings>(
-            value: choice,
-            child:
-                ListTile(leading: Icon(choice.icon), title: Text(choice.title)),
-          );
-        }).toList();
-      },
-    );
+        icon: Icon(Icons.short_text),
+        onSelected: _changeAppSettings,
+        itemBuilder: (BuildContext context) {
+          return choices.map((GeneralSettings choice) {
+            return PopupMenuItem<GeneralSettings>(
+                value: choice,
+                child: ListTile(
+                    leading: Icon(choice.icon), title: Text(choice.title)));
+          }).toList();
+        });
   }
 
   void _changeAppSettings(GeneralSettings choice) {
