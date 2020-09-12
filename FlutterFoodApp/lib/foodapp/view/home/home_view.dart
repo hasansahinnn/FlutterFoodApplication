@@ -5,9 +5,11 @@ import 'package:flutterfoodapp/core/components/button/shadow_button.dart';
 import 'package:flutterfoodapp/core/constants/app/app_constants.dart';
 import 'package:flutterfoodapp/core/init/notifier/theme_notifer.dart';
 import 'package:flutterfoodapp/foodapp/components/cards/category_card.dart';
+import 'package:flutterfoodapp/foodapp/models/Categories.dart';
 import 'package:provider/provider.dart';
 import 'home_view_model.dart';
 import '../../../core/extensions/extensions_provider.dart';
+import '../../../core/extensions/future_builder.dart';
 
 class HomePageView extends HomePageViewModel {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
@@ -59,7 +61,7 @@ class HomePageView extends HomePageViewModel {
 
   IconButton get appBarRefreshButton => IconButton(
       onPressed: () {
-        getHomePageData();
+        categoriesList;
       },
       icon: Icon(Icons.refresh));
 
@@ -100,14 +102,17 @@ class HomePageView extends HomePageViewModel {
   Widget get categoriesList {
     return Container(
         padding: EdgeInsets.only(left: context.mediumValue),
-        child: isLoading
-            ? CircularProgressIndicator()
-            : ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: categories.length,
-                itemBuilder: (context, index) =>
-                    CategoryCard(category: categories[index]),
-              ));
+        child: Future.value(categoryService.getCategoryList())
+            .toBuild<List<Categories>>(
+          onSuccess: (data) {
+            return ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: data.length,
+              itemBuilder: (context, index) =>
+                  CategoryCard(category: data[index]),
+            );
+          },
+        ));
   }
 
   // ---------------------------- Categories List

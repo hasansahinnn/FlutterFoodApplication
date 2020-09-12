@@ -18,14 +18,5 @@ class NetworkManager {
     // _dio = Dio(baseOptions);
 
     coreDio = CoreDio(baseOptions);
-
-    // _dio.interceptors.add(InterceptorsWrapper(
-    //   onRequest: (options) {
-    //     options.path += "veli";
-    //   },
-    //   onError: (e) {
-    //     return BaseError(e.message);
-    //   },
-    // ));
   }
 }
