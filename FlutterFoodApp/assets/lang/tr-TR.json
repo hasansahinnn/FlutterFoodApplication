@@ -1,7 +1,9 @@
 {
     "Food App": "Yemek Uygulaması",
-    "test": "turkce",
-    "characters": "Karakterler",
+    "What do you want to eat today?": "Bugün ne yemek istersin?",
+    "Popular": "Popüler",
+    "Price": "Adet",
+    "Piece": "Fiyat",
     "DARK": "Siyah",
     "LIGHT": "Acik"
 }

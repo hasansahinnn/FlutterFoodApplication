@@ -26,7 +26,7 @@ final ThemeData myLightTheme = ThemeData(
   cardColor: Color(0xffffffff),
   dividerColor: Color(0x1f000000),
   highlightColor: Color(0x66bcbcbc),
-  splashColor: Color(0x66c8c8c8),
+  splashColor: Color(0x8a000000),
   selectedRowColor: Color(0xfff5f5f5),
   unselectedWidgetColor: Color(0x8a000000),
   disabledColor: Color(0x61000000),
@@ -38,7 +38,7 @@ final ThemeData myLightTheme = ThemeData(
   textSelectionHandleColor: Color(0xffb3b3b3),
   backgroundColor: Color(0xffcccccc),
   dialogBackgroundColor: Color(0xffffffff),
-  indicatorColor: Color(0xff808080),
+  indicatorColor: Color(0xffdf2f2f),
   hintColor: Color(0x8a000000),
   errorColor: Color(0xffd32f2f),
   buttonTheme: ButtonThemeData(

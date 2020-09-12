@@ -28,8 +28,8 @@ class CategoryCard extends StatelessWidget {
     return ClipRRect(
         borderRadius: BorderRadius.circular(25.0),
         child: Image(
-            width: width * 0.35,
-            height: height * 0.2,
+            width: width * 0.32,
+            height: height * 0.19,
             image: NetworkImage(photoUrl),
             fit: BoxFit.cover));
   }
@@ -37,7 +37,7 @@ class CategoryCard extends StatelessWidget {
   Positioned categoryText(String categoryName, int itemCount) {
     return Positioned(
         left: 4,
-        bottom: 2,
+        bottom: 0,
         child: Row(
           children: [
             Text(

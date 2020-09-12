@@ -1,4 +1,4 @@
-import 'package:flutterfoodapp/core/base/model/base_model.dart';
+import '../../core/base/model/base_model.dart';
 
 class Product implements IBaseModel<Product> {
   List<ProductPhotos> productPhotos;

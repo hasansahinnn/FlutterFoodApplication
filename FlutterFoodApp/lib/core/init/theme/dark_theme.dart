@@ -26,7 +26,7 @@ final ThemeData myDarkTheme = ThemeData(
   cardColor: Color(0xff424242),
   dividerColor: Color(0x1fffffff),
   highlightColor: Color(0x40cccccc),
-  splashColor: Color(0x40cccccc),
+  splashColor: Color(0x62ffffff),
   selectedRowColor: Color(0xfff5f5f5),
   unselectedWidgetColor: Color(0xb3ffffff),
   disabledColor: Color(0x62ffffff),
@@ -38,7 +38,7 @@ final ThemeData myDarkTheme = ThemeData(
   textSelectionHandleColor: Color(0xff1de9b6),
   backgroundColor: Color(0xff616161),
   dialogBackgroundColor: Color(0xff424242),
-  indicatorColor: Color(0xff64ffda),
+  indicatorColor: Color(0xff000000),
   hintColor: Color(0x80ffffff),
   errorColor: Color(0xffd32f2f),
   buttonTheme: ButtonThemeData(
